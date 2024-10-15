@@ -1,8 +1,8 @@
-class Account {
+export default class Account {
     #solde;
     #interet;
     #historiqueOperations = [];
-    constructor(solde, interet) {
+    constructor(solde) {
         this.#solde = solde;
         this.#interet = 0.03;
     }
@@ -15,19 +15,27 @@ class Account {
 
     deposit(montant) {
         this.#solde += montant;
-        historiqueOperations.push("Dépôt de " + montant + " euros.");
+        this.#historiqueOperations.push("Dépôt de " + montant + " euros.");
     }
 
     withdraw(montant) {
-        this.#solde -= montant;
-        historiqueOperations.push("Retrait de " + montant + " euros.");
+        if(this.#solde >= montant) {
+            this.#solde -= montant;
+            this.#historiqueOperations.push("Retrait de " + montant + " euros.");
+        }
     }
 
     addInteret() {
-        this.#solde *= this.#interet;
+        this.#solde += this.#solde *this.#interet;
     }
 
     getInteret() {
         return this.#interet;
+    }
+    afficherHistorique() {
+        console.log(this.#historiqueOperations);
+    }
+    afficherSolde() {
+        console.log(`Votre solde est de : ${this.#solde} euros.`);
     }
 }
