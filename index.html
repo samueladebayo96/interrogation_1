@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=h1, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=h1, initial-scale=1.0" />
     <title>Banque : Compte d’Épargne</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <section id="mainSection">
-        <header>
-            <h1>Mon Compte d’Épargne</h1>
-        </header>
-        <h2>
-            Gestion de Compte
-        </h2>
-        <p>
-            <i>
-                Nous allons simuler des opérations bancaires simples en JavaScript.
-            </i>
-        </p>
+      <header>
+        <h1>Mon Compte d’Épargne</h1>
+      </header>
+      <h2>Gestion de Compte</h2>
+      <p>
+        <i>
+          Nous allons simuler des opérations bancaires simples en JavaScript.
+        </i>
+      </p>
     </section>
-    <section id="Résultats">
-
-    </section>
+    <form id="PaymentForm">
+      <div>
+        <label for="depositMoney">Dépôt</label>
+        <input
+          placeholder="123"
+          type="number"
+          id="depositMoney"
+          name="depositMoney"
+          required
+          min="0"
+        />
+      </div>
+      <div>
+        <label for="withdrawMoney">Retrait</label>
+        <input
+          placeholder="123"
+          type="number"
+          id="withdrawMoney"
+          name="withdrawMoney"
+          required
+          min="0"
+        />
+      </div>
+      <div>
+        <button>Valider</button>
+      </div>
+    </form>
+    <section id="Résultats"></section>
     <script src="/js/main.js" type="module"></script>
-</body>
-
+  </body>
 </html>
