@@ -9,6 +9,14 @@ export default class Account {
   getSolde() {
     return this.#solde;
   }
+
+  getInteret() {
+    return this.#interet;
+  }
+
+  getHistoriqueOperations() {
+    return this.#historiqueOperations;
+  }
   setSolde(newSolde) {
     this.#solde = newSolde;
   }
@@ -26,15 +34,13 @@ export default class Account {
   }
 
   addInteret() {
-    this.#solde += this.#solde * this.#interet;
+    this.#solde += this.getSolde() * this.getInteret();
   }
 
-  getInteret() {
-    return this.#interet;
-  }
   afficherHistorique() {
-    console.log(this.#historiqueOperations);
+    console.log(this.getHistoriqueOperations());
   }
+
   afficherSolde() {
     console.log(`Votre solde est de : ${this.#solde} euros.`);
   }
